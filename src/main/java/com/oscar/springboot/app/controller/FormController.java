@@ -1,8 +1,5 @@
 package com.oscar.springboot.app.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -30,13 +27,6 @@ public class FormController {
 		model.addAttribute("titulo", "Resultado form");
 
 		if (result.hasErrors()) {
-			Map<String, String> errores = new HashMap<String, String>();
-			result.getFieldErrors().forEach(error -> {
-				errores.put(error.getField(), "El campo ".concat(error.getField()).concat(" ").concat(error.getDefaultMessage()));
-			});
-			
-			model.addAttribute("error", errores);
-			
 			return "form";
 		}
 

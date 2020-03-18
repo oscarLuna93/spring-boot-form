@@ -5,6 +5,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import com.oscar.springboot.app.validation.IdentificadorRegex;
+import com.oscar.springboot.app.validation.Requerido;
 
 public class Usuario {
 
@@ -13,7 +14,7 @@ public class Usuario {
 
 	private String nombre;
 	
-	@NotBlank
+	@Requerido
 	private String apellido;
 	
 	@NotBlank

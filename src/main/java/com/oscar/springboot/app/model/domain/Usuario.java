@@ -4,8 +4,11 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import com.oscar.springboot.app.validation.IdentificadorRegex;
+
 public class Usuario {
 
+	@IdentificadorRegex
 	private String identificador;
 
 	private String nombre;

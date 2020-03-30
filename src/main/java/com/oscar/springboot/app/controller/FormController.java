@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.oscar.springboot.app.editors.NombreMayusculaEditor;
+import com.oscar.springboot.app.model.domain.Pais;
 import com.oscar.springboot.app.model.domain.Usuario;
 import com.oscar.springboot.app.validation.UsuarioValidador;
 
@@ -57,6 +58,15 @@ public class FormController {
 		paises.put("PE", "Peru");
 		
 		return paises;
+	}
+	
+	@ModelAttribute("listaPaises")
+	public List<Pais> listaPaises() {
+		return Arrays.asList(
+				new Pais(1, "MX", "Mexico"),
+				new Pais(2, "AR", "Argentina"),
+				new Pais(3, "CL", "Chile"),
+				new Pais(4, "PE", "Peru"));
 	}
 	
 	@GetMapping("/form")
